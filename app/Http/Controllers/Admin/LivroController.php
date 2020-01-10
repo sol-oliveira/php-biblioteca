@@ -82,26 +82,6 @@ class LivroController extends Controller
     {
       Livro::find($id)->delete();
       return redirect()->route('admin.livros');
-    }
-
-    public function listar()
-    {
-      $registros = Livro::all();
-      return view('admin.livros.listar',compact('registros'));
-    }
-
-    public function reservar($id)
-    {
-      $dados = [
-        'usuario' => Auth::user()->id,
-        'livro' => $id,
-        'status' => 'em andamento',
-      ]; 
-
-      Reserva::create($dados);
-     // fazer view minhas reservas
-      return redirect()->route('admin.livros.listar');
-     
-    }
+    }  
 
 }

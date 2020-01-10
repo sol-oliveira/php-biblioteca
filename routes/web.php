@@ -24,15 +24,18 @@ Route::group(['middleware'=>'auth'],function(){
   Route::post('/admin/livros/salvar',['as'=>'admin.livros.salvar','uses'=>'Admin\LivroController@salvar']);
   Route::get('/admin/livros/editar/{id}',['as'=>'admin.livros.editar','uses'=>'Admin\LivroController@editar']);
   Route::put('/admin/livros/atualizar/{id}',['as'=>'admin.livros.atualizar','uses'=>'Admin\LivroController@atualizar']);
-  Route::get('/admin/livros/deletar/{id}',['as'=>'admin.livros.deletar','uses'=>'Admin\LivroController@deletar']);  
-  Route::get('/admin/livros/listar', ['as'=>'admin.livros.listar','uses'=>'Admin\LivroController@listar']);
-  Route::get('/admin/livros/reservar/{id}',['as'=>'admin.livros.reservar','uses'=>'Admin\LivroController@reservar']);
-  //Rotas Usuario/Controller
+  Route::get('/admin/livros/deletar/{id}',['as'=>'admin.livros.deletar','uses'=>'Admin\LivroController@deletar']); 
+ 
+  //Rotas UsuarioController
   Route::get('/admin/usuarios',['as'=>'admin.usuarios','uses'=>'Admin\UsuarioController@index']);
   Route::get('/admin/usuarios/adicionar',['as'=>'admin.usuarios.adicionar','uses'=>'Admin\UsuarioController@adicionar']);
   Route::post('/admin/usuarios/salvar',['as'=>'admin.usuarios.salvar','uses'=>'Admin\UsuarioController@salvar']);
   Route::get('/admin/usuarios/editar/{id}',['as'=>'admin.usuarios.editar','uses'=>'Admin\UsuarioController@editar']);
   Route::put('/admin/usuarios/atualizar/{id}',['as'=>'admin.usuarios.atualizar','uses'=>'Admin\UsuarioController@atualizar']);
   Route::get('/admin/usuarios/deletar/{id}',['as'=>'admin.usuarios.deletar','uses'=>'Admin\UsuarioController@deletar']);
+
+   //Rotas ReservaController
+   Route::get('/admin/reservas', ['as'=>'admin.reservas','uses'=>'Admin\ReservaController@index']);
+   Route::get('/admin/reservas/salvar/{id}',['as'=>'admin.reservas.salvar','uses'=>'Admin\ReservaController@salvar']);
 
 });

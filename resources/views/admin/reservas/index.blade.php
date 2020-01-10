@@ -24,7 +24,7 @@
               <td><img height="60" src="{{asset($registro->imagem)}}" alt="{{ $registro->titulo }}" /></td>             
               <td>{{ $registro->publicado }}</td>
               <td>
-                <a class="btn deep-orange lighten-2" href="{{ route('admin.livros.reservar',$registro->id) }}">Reservar</a>              
+                <a class="btn deep-orange lighten-2" href="{{ route('admin.reservas.salvar',$registro->id) }}">Reservar</a>              
               </td>
             </tr>
           @endforeach         
