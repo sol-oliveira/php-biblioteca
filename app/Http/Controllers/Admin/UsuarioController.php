@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use Auth;
 
 class UsuarioController extends Controller
 {
@@ -57,6 +58,13 @@ class UsuarioController extends Controller
       } 
 
       $user->save();
+
+      if($id == Auth::user()->id)
+      {        
+        $registro = User::find($id);
+
+        return view('admin.usuarios.editar',compact('registro'));
+      }
 
       return redirect()->route('admin.usuarios');
     }
