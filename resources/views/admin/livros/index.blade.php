@@ -35,7 +35,7 @@
       </table>
     </div>
     <div class="row">
-      <a class="btn blue" href="{{ route('admin.livros.adicionar') }}">Adicionar</a>
+      <a class="btn deep-orange lighten-2" href="{{ route('admin.livros.adicionar') }}">Adicionar</a>
 
     </div>
 

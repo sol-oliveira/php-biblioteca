@@ -24,6 +24,7 @@
            <li><a href="{{route('site.login')}}">Login</a></li>
          @else
            <li><a href="{{route('admin.livros')}}">Livros</a></li>
+           <li><a href="{{route('admin.usuarios')}}">Usuários</a></li>
            <li><a href="#">{{Auth::user()->name}}</a></li>
            <li><a href="{{ route('site.login.sair') }}">Sair</a></li>
          @endif
@@ -34,9 +35,10 @@
          @if(Auth::guest())
            <li><a href="{{route('site.login')}}">Login</a></li>
          @else
-           <li><a href="{{route('admin.livros')}}">Livros</a></li>
-           <li><a href="#">{{Auth::user()->name}}</a></li>
-           <li><a href="{{ route('site.login.sair') }}">Sair</a></li>
+          <li><a href="{{route('admin.usuarios')}}">Usuários</a></li>
+          <li><a href="{{route('admin.livros')}}">Livros</a></li>
+          <li><a href="#">{{Auth::user()->name}}</a></li>
+          <li><a href="{{ route('site.login.sair') }}">Sair</a></li>
          @endif
        </ul>
      </div>

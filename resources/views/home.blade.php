@@ -9,8 +9,8 @@
       @foreach($livros as $livro)
         <div class="col s12 m4">
           <div class="card">
-            <div class="card-image">
-              <img src="{{asset($livro->imagem)}}">
+            <div class="card-image" >
+              <img  src="{{asset($livro->imagem)}}">
             </div>
             <div class="card-content">
               <h4>{{$livro->titulo}}</h4>
