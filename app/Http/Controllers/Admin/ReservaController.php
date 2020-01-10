@@ -28,9 +28,28 @@ class ReservaController extends Controller
       ]; 
 
       Reserva::create($dados);
-     // fazer view minhas reservas
-      return redirect()->route('admin.reservas');
-     
+   
+      return redirect()->route('admin.reservas.listar');     
     }
+
+    public function listar()
+    {
+      $usuario =  Auth::user()->id;
+
+      $registros = Reserva::select('livros.*', 'reservas.status', 'reservas.id as idreserva' )->join('livros', 'reservas.livro', '=', 'livros.id')
+      ->where('reservas.status', '!=', 'cancelada')
+      ->where('reservas.usuario', '=', $usuario)->get(); 
+      
+      return view('admin.reservas.listar',compact('registros'));
+    }
+
+    public function deletar($id)
+    {              
+      $reserva = Reserva::find($id);     
+      $reserva->status = 'cancelada';      
+      $reserva->save(); 
+
+      return redirect()->route('admin.reservas.listar');
+    } 
 
 }
