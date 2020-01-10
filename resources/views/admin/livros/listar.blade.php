@@ -11,8 +11,7 @@
           <tr>
             <th>Id</th>
             <th>Título</th>            
-            <th>Imagem</th>
-            <th>Quantidade</th>
+            <th>Imagem</th>        
             <th>Disponível</th>
             <th>Ação</th>
           </tr>
@@ -22,26 +21,16 @@
             <tr>
               <td>{{ $registro->id }}</td>
               <td>{{ $registro->titulo }}</td>             
-              <td><img height="60" src="{{asset($registro->imagem)}}" alt="{{ $registro->titulo }}" /></td>
-              <td>{{ $registro->quantidade }}</td> 
+              <td><img height="60" src="{{asset($registro->imagem)}}" alt="{{ $registro->titulo }}" /></td>             
               <td>{{ $registro->publicado }}</td>
               <td>
-                <a class="btn deep-orange lighten-2" href="{{ route('admin.livros.editar',$registro->id) }}">Editar</a>
-                <a class="btn red" href="{{ route('admin.livros.deletar',$registro->id) }}">Deletar</a>
+                <a class="btn deep-orange lighten-2" href="{{ route('admin.livros.reservar',$registro->id) }}">Reservar</a>              
               </td>
             </tr>
           @endforeach         
         </tbody>
       </table>
     </div>
-    <div class="row">
-      <a class="btn deep-orange lighten-2" href="{{ route('admin.livros.adicionar') }}">Adicionar</a>
-
-    </div>
-
   </div>
-
-
-
 
 @endsection
