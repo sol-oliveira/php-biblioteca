@@ -44,8 +44,7 @@ class ReservaController extends Controller
         return view('admin.reservas.listar',compact('registros'));
       }
       
-      $registros = Reserva::select('livros.*', 'reservas.status', 'reservas.id as idreserva' )->join('livros', 'reservas.livro', '=', 'livros.id')
-      ->where('reservas.status', '!=', 'cancelada')
+      $registros = Reserva::select('livros.*', 'reservas.status', 'reservas.id as idreserva' )->join('livros', 'reservas.livro', '=', 'livros.id')   
       ->where('reservas.usuario', '=', $usuario)->get(); 
       
       return view('admin.reservas.listar',compact('registros'));
@@ -63,7 +62,7 @@ class ReservaController extends Controller
     public function finalizar($id)
     {                    
       $reserva = Reserva::find($id);     
-      $reserva->status = 'finalizada';      
+      $reserva->status = 'finalizar';      
       $reserva->save(); 
 
       return redirect()->route('admin.reservas.listar');
