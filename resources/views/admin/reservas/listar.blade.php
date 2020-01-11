@@ -39,9 +39,9 @@
               <td></td>
               <td>
               @if(Auth::user()->admin == 'sim')               
-                <a {{$registro->status == 'finalizada' || $registro->status == 'cancelada' ? 'disabled': ''}} class="btn deep-orange lighten-2" href="{{ route('admin.reservas.finalizar',$registro->idreserva) }}">Finalizar</a>
+                <a {{$registro->status == 'finalizar' || $registro->status == 'cancelada' ? 'disabled': ''}} class="btn deep-orange lighten-2" href="{{ route('admin.reservas.finalizar',$registro->idreserva) }}">Finalizar</a>
                @endif
-                <a {{$registro->status == 'finalizada' || $registro->status == 'cancelada'  ? 'disabled': ''}} class="btn red" href="{{ route('admin.reservas.cancelar',$registro->idreserva) }}">Cancelar</a>             
+                <a {{$registro->status == 'finalizar' || $registro->status == 'cancelada'  ? 'disabled': ''}} class="btn red" href="{{ route('admin.reservas.cancelar',$registro->idreserva) }}">Cancelar</a>             
               </td>
               <td>
                             
