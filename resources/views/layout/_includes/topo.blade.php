@@ -25,24 +25,32 @@
          @if(Auth::guest())
            <li><a href="{{route('site.login')}}">Login</a></li>
          @else
-           <li><a href="{{route('admin.reservas')}}">Reservar</a></li>
-           <li><a href="{{route('admin.reservas.listar')}}">Listar Reservas</a></li>          
-           <li><a href="{{route('admin.livros')}}">Livros</a></li>
-           <li><a href="{{route('admin.usuarios')}}">Usuários</a></li>
-           <li><a href="{{route('admin.usuarios.editar', Auth::user()->id)}}">{{Auth::user()->name}}</a></li>
-           <li><a href="{{ route('site.login.sair') }}">Sair</a></li>
+          @if(Auth::user()->admin == "nao")
+            <li><a href="{{route('admin.reservas')}}">Livros</a></li>
+          @else
+            <li><a href="{{route('admin.usuarios')}}">Usuários</a></li>
+            <li><a href="{{route('admin.livros')}}">Livros</a></li>          
+          @endif
+            <li><a href="{{route('admin.reservas.listar')}}">Reservas</a></li>                     
+            <li><a href="{{route('admin.usuarios.editar', Auth::user()->id)}}">{{Auth::user()->name}}</a></li>
+            <li><a href="{{ route('site.login.sair') }}">Sair</a></li>
          @endif
-
        </ul>
+
        <ul class="side-nav" id="mobile">
          <li><a href="/">Home</a></li>
          @if(Auth::guest())
            <li><a href="{{route('site.login')}}">Login</a></li>
          @else
-          <li><a href="{{route('admin.usuarios')}}">Usuários</a></li>
-          <li><a href="{{route('admin.livros')}}">Livros</a></li>
-          <li><a href="{{route('admin.usuarios.editar', Auth::user()->id)}}">{{Auth::user()->name}}</a></li>
-          <li><a href="{{ route('site.login.sair') }}">Sair</a></li>
+          @if(Auth::user()->admin == "nao")
+            <li><a href="{{route('admin.reservas')}}">Livros</a></li>
+          @else
+            <li><a href="{{route('admin.usuarios')}}">Usuários</a></li>
+            <li><a href="{{route('admin.livros')}}">Livros</a></li>           
+          @endif
+            <li><a href="{{route('admin.reservas.listar')}}">Listar Reservas</a></li>                     
+            <li><a href="{{route('admin.usuarios.editar', Auth::user()->id)}}">{{Auth::user()->name}}</a></li>
+            <li><a href="{{ route('site.login.sair') }}">Sair</a></li>
          @endif
        </ul>
      </div>
