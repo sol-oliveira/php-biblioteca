@@ -25,7 +25,7 @@
               <td>{{ $registro->publicado }}</td>
               <td>
                 <a class="btn deep-orange lighten-2" href="{{ route('admin.reservas.salvar',$registro->id) }}">Reservar</a>              
-              </td>
+              </td>              
             </tr>
           @endforeach         
         </tbody>

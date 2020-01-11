@@ -24,7 +24,7 @@
            <li><a href="{{route('site.login')}}">Login</a></li>
          @else
            <li><a href="{{route('admin.reservas')}}">Reservar</a></li>
-           <li><a href="{{route('admin.reservas.listar')}}">Listar Reservas</a></li>
+           <li><a href="{{route('admin.reservas.listar')}}">Listar Reservas</a></li>          
            <li><a href="{{route('admin.livros')}}">Livros</a></li>
            <li><a href="{{route('admin.usuarios')}}">Usuários</a></li>
            <li><a href="{{route('admin.usuarios.editar', Auth::user()->id)}}">{{Auth::user()->name}}</a></li>

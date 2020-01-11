@@ -37,7 +37,8 @@ Route::group(['middleware'=>'auth'],function(){
    //Rotas ReservaController
    Route::get('/admin/reservas', ['as'=>'admin.reservas','uses'=>'Admin\ReservaController@index']);
    Route::get('/admin/reservas/salvar/{id}',['as'=>'admin.reservas.salvar','uses'=>'Admin\ReservaController@salvar']);
-   Route::get('/admin/reservas/listar', ['as'=>'admin.reservas.listar','uses'=>'Admin\ReservaController@listar']);
-   Route::get('/admin/reservas/deletar/{idreserva}',['as'=>'admin.reservas.deletar','uses'=>'Admin\ReservaController@deletar']);
+   Route::get('/admin/reservas/listar', ['as'=>'admin.reservas.listar','uses'=>'Admin\ReservaController@listar']);  
+   Route::get('/admin/reservas/cancelar/{idreserva}',['as'=>'admin.reservas.cancelar','uses'=>'Admin\ReservaController@cancelar']);
+   Route::get('/admin/reservas/finalizar/{idreserva}',['as'=>'admin.reservas.finalizar','uses'=>'Admin\ReservaController@finalizar']);
 
 });
