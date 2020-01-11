@@ -4,7 +4,7 @@
 
 @section('conteudo')
   <div class="container">
-    <h3 class="center">Adicionar Usuários</h3>
+    <h3 class="center">Adicionar Usuário</h3>
     <div class="row">
       <form class="" action="{{route('admin.usuarios.salvar')}}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}

@@ -4,13 +4,13 @@
 
 @section('conteudo')
   <div class="container">
-    <h3 class="center">Usuários</h3>
+    <h3 class="center">Listar Usuários</h3>
     <div class="row">
       <table>
         <thead>
           <tr>
             <th>Id</th>
-            <th>Nome</th>            
+            <th>Nome</th>   
             <th>E-mail</th> 
             <th>Admin</th>                       
             <th>Ação</th>

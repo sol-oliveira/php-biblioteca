@@ -4,7 +4,7 @@
 
 @section('conteudo')
   <div class="container">
-    <h3 class="center">Editando Livros</h3>
+    <h3 class="center">Editar Livros</h3>
     <div class="row">
       <form class="" action="{{route('admin.livros.atualizar',$registro->id)}}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}

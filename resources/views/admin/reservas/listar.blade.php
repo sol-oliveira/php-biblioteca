@@ -4,7 +4,7 @@
 
 @section('conteudo')
   <div class="container">
-    <h3 class="center">Reservas</h3>
+    <h3 class="center">Listar Reservas</h3>
     <div class="row">
       <table>
         <thead>
@@ -12,12 +12,12 @@
             <th>Id</th>
             <th>Título</th>            
             <th>Imagem</th>              
-            <th>Data</th>
+            <th  class="text-center"> Data</th>
             @if(Auth::user()->admin == 'sim')
-            <th>Nome</th> 
-            <th>Email</th> 
+            <th class="text-center">Nome</th> 
+            <th class="text-center">Email</th> 
             @endif
-            <th>Status</th>       
+            <th class="text-center">Status</th>       
             <th></th> 
             <th></th>          
             <th>Ação</th>
@@ -26,15 +26,15 @@
         <tbody>      
           @foreach($registros as $registro)
             <tr>
-              <td>{{ $registro->idreserva }}</td>
-              <td>{{ $registro->titulo }}</td>             
+              <td>{{$registro->idreserva}}</td>
+              <td>{{$registro->titulo}}</td>             
               <td><img height="60" src="{{asset($registro->imagem)}}" alt="{{ $registro->titulo }}" /></td>   
-              <td>{{ $registro->created_at->format('d m Y ') }}</td>
+              <td class="text-center">{{ $registro->created_at->format('d m Y ') }}</td>
               @if(Auth::user()->admin == 'sim')
               <td>{{$registro->name}}</td>
               <td>{{$registro->email}}</td>
               @endif
-              <td>{{ $registro->status }}</td>
+              <td class="text-center">{{$registro->status}}</td>
               <td></td>
               <td></td>
               <td>

@@ -4,7 +4,7 @@
 
 @section('conteudo')
   <div class="container">
-    <h3 class="center">Livros</h3>
+    <h3 class="center">Listar Livros</h3>
     <div class="row">
       <table>
         <thead>
@@ -37,12 +37,7 @@
     </div>
     <div class="row">
       <a class="btn deep-orange lighten-2" href="{{ route('admin.livros.adicionar') }}">Adicionar</a>
-
     </div>
-
   </div>
-
-
-
 
 @endsection

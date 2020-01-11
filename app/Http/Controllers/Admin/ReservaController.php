@@ -15,7 +15,7 @@ class ReservaController extends Controller
     
     public function index()
     {
-      $registros = Livro::all();
+      $registros = Livro::all();   
       return view('admin.reservas.index',compact('registros'));
     }
 

@@ -1,16 +1,13 @@
 <div class="input-field">
-  <input type="text" name="titulo" value="{{isset($registro->titulo) ? $registro->titulo : ''}}">
+  <input type="text" name="titulo" value="{{isset($registro->titulo) ? $registro->titulo : ''}}" required>
   <label>Título</label>
 </div>
-
 <div class="input-field">
-  <input type="text" name="quantidade" value="{{isset($registro->quantidade) ? $registro->quantidade : ''}}">
+  <input type="text" name="quantidade" value="{{isset($registro->quantidade) ? $registro->quantidade : ''}}" required>
   <input type="hidden" name="disponivel" value="{{isset($registro->disponivel) ? $registro->disponivel : ''}}">
   <label>Quantidade</label>
 </div>
-
 <div class="file-field  input-field">
-
   <div class="btn blue">
     <span>Imagem</span>
     <input type="file" name="imagem">
