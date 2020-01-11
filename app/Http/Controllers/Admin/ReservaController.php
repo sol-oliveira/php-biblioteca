@@ -28,6 +28,10 @@ class ReservaController extends Controller
       ]; 
 
       Reserva::create($dados);
+
+      $livro = Livro::find($id);     
+      $livro->disponivel =  $livro->disponivel - 1;    
+      $livro->save(); 
    
       return redirect()->route('admin.reservas.listar');     
     }

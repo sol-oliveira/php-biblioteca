@@ -25,6 +25,8 @@ Route::group(['middleware'=>'auth'],function(){
   Route::get('/admin/livros/editar/{id}',['as'=>'admin.livros.editar','uses'=>'Admin\LivroController@editar']);
   Route::put('/admin/livros/atualizar/{id}',['as'=>'admin.livros.atualizar','uses'=>'Admin\LivroController@atualizar']);
   Route::get('/admin/livros/deletar/{id}',['as'=>'admin.livros.deletar','uses'=>'Admin\LivroController@deletar']); 
+  Route::get('/admin/livros/disponibilizar/{id}',['as'=>'admin.livros.disponibilizar','uses'=>'Admin\LivroController@disponibilizar']); 
+  Route::get('/admin/reservas/cancelar/{idreserva}',['as'=>'admin.reservas.cancelar','uses'=>'Admin\ReservaController@cancelar']);
  
   //Rotas UsuarioController
   Route::get('/admin/usuarios',['as'=>'admin.usuarios','uses'=>'Admin\UsuarioController@index']);

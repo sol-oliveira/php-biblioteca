@@ -22,9 +22,9 @@
               <td>{{ $registro->id }}</td>
               <td>{{ $registro->titulo }}</td>             
               <td><img height="60" src="{{asset($registro->imagem)}}" alt="{{ $registro->titulo }}" /></td>             
-              <td>{{ $registro->publicado }}</td>
+              <td>{{ $registro->disponivel }}</td>
               <td>
-                <a class="btn deep-orange lighten-2" href="{{ route('admin.reservas.salvar',$registro->id) }}">Reservar</a>              
+                <a {{$registro->disponivel == 0 ? 'disabled': ''}} class="btn deep-orange lighten-2" href="{{ route('admin.reservas.salvar',$registro->id) }}">Reservar</a>              
               </td>              
             </tr>
           @endforeach         

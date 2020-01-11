@@ -25,10 +25,8 @@ class LivroController extends Controller
     {
       $dados = $req->all();
 
-      if(isset($dados['publicado'])){
-        $dados['publicado'] = 'sim';
-      }else{
-        $dados['publicado'] = 'nao';
+      if(isset($dados['quantidade'])){
+        $dados['disponivel'] = $dados['quantidade'];
       }
 
       if($req->hasFile('imagem')){
@@ -52,16 +50,11 @@ class LivroController extends Controller
       $registro = Livro::find($id);
       return view('admin.livros.editar',compact('registro'));
     }
+
     public function atualizar(Request $req, $id)
     {
-      $dados = $req->all();
-
-      if(isset($dados['publicado'])){
-        $dados['publicado'] = 'sim';
-      }else{
-        $dados['publicado'] = 'nao';
-      }
-
+      $dados = $req->all();    
+        
       if($req->hasFile('imagem')){
         $imagem = $req->file('imagem');
         $num = rand(1111,9999);
@@ -83,5 +76,14 @@ class LivroController extends Controller
       Livro::find($id)->delete();
       return redirect()->route('admin.livros');
     }  
+
+    public function disponibilizar($id)
+    {                    
+      $livro = Livro::find($id);     
+      $livro->disponivel =  $livro->disponivel + 1;    
+      $livro->save(); 
+
+      return redirect()->route('admin.livros');
+    } 
 
 }

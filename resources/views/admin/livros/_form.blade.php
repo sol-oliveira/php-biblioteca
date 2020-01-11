@@ -5,6 +5,7 @@
 
 <div class="input-field">
   <input type="text" name="quantidade" value="{{isset($registro->quantidade) ? $registro->quantidade : ''}}">
+  <input type="hidden" name="disponivel" value="{{isset($registro->disponivel) ? $registro->disponivel : ''}}">
   <label>Quantidade</label>
 </div>
 
@@ -23,11 +24,5 @@
   <img width="150" src="{{asset($registro->imagem)}}" />
 </div>
 @endif
+<br><br>
 
-<div class="input-field">
-  <p>
-      <input type="checkbox" id="test5" name="publicado" {{isset($registro->publicado) && $registro->publicado == 'sim' ? 'checked' : '' }} value="true" />
-      <label for="test5">Publicar?</label>
-    </p>
-    <br><br>
-</div>

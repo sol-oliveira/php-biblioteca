@@ -1,6 +1,6 @@
 @extends('layout.site')
 
-@section('titulo','Cursos')
+@section('titulo','Biblioteca')
 
 @section('conteudo')
   <div class="container">
@@ -10,20 +10,18 @@
         {{ csrf_field() }}
 
         <div class="input-field">
-          <input type="email" name="email">
-          <label>E-mail</label>
+          <input type="email" name="email" required>
+          <label>Email</label>
         </div>
         <div class="input-field">
-          <input type="password" name="senha">
+          <input type="password" name="senha" required>
           <label>Senha</label>
         </div>
 
-        <button class="btn deep-orange">Entrar</button>
+        <button class="btn deep-orange lighten-2">Entrar</button>
       </form>
     </div>
   </div>
-
-
-
+  
 
 @endsection
