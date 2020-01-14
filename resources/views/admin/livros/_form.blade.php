@@ -10,7 +10,7 @@
 <div class="file-field  input-field">
   <div class="btn blue">
     <span>Imagem</span>
-    <input type="file" name="imagem" required>
+    <input id="imagem" type="file" name="imagem" required>
   </div>
   <div class="file-path-wrapper">
     <input class="file-path validate" type="text">
@@ -22,4 +22,5 @@
 </div>
 @endif
 <br><br>
+
 

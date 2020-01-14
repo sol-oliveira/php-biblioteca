@@ -6,6 +6,10 @@
     Materialize.updateTextFields();
     $(".button-collapse").sideNav();
   });
+
+  $('#btn_atualizar').click(function(){     
+    $("#imagem").removeAttr('required');
+  }); 
 </script>
 </body>
 </html>
