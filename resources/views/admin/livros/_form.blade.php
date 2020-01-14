@@ -3,9 +3,14 @@
   <label>Título</label>
 </div>
 <div class="input-field">
-  <input type="text" pattern="[0-9]+" name="quantidade" value="{{isset($registro->quantidade) ? $registro->quantidade : ''}}" required>
+  <input id="quantidade"  type="text" pattern="[0-9]+" name="quantidade" value="{{isset($registro->quantidade) ? $registro->quantidade : ''}}" required>
   <input type="hidden" name="disponivel" value="{{isset($registro->disponivel) ? $registro->disponivel : ''}}">
   <label>Quantidade</label>
+  <div class="div_alert hide">
+    <span class="msg_alert">
+      o número deve ser maior que zero
+    </span>
+  </div>
 </div>
 <div class="file-field  input-field">
   <div class="btn blue">

@@ -1,3 +1,19 @@
 .text-center{ text-align: center; };
 
 .mt-20{ margin-top: 20px; }
+
+.msg_alert{
+		font-weight: normal;
+		font-style: italic;
+		color: #C02323;
+		font-size: 12px;
+		text-align: right;
+	}
+
+.div_alert{
+    background-color: #fbe9e7 ;
+    padding: 8px 10px;
+    font-size: 12px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}

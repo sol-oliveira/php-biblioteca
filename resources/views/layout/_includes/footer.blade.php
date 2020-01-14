@@ -8,8 +8,35 @@
   });
 
   $('#btn_atualizar').click(function(){     
+   
     $("#imagem").removeAttr('required');
+   
+    var quantidade = $('input[name="quantidade"]').val();
+   
+    if(quantidade <= 0){
+
+    $("#quantidade").css('margin', 0);
+
+    $(".div_alert").removeClass('hide');
+      
+    return false;
+    }
+  });
+
+  $('#btn_salvar').click(function(){
+
+    var quantidade = $('input[name="quantidade"]').val();
+
+    if(quantidade == 0){     
+
+      $("#quantidade").css('margin', 0);
+
+      $(".div_alert").removeClass('hide');     
+
+       return false;
+    }
   }); 
 </script>
 </body>
 </html>
+
